@@ -3,10 +3,10 @@
 # my reposync syntax for pulling the latest packages via 'reposync'
 
 ## for base
-# reposync -gdlmnq -p /data/repos/centos7/base --repoid=base --download-metadata --norepopath
+# reposync -gdlmnq -p /data/repos/centos7 --repoid=base --download-metadata
 
 # for extras
-# reposync -gdlmnq -p /data/repos/centos7/extras --repoid=extras --download-metadata --norepopath
+# reposync -gdlmnq -p /data/repos/centos7 --repoid=extras --download-metadata
 
 # for updates
 # reposync -gdlmnq -p /data/repos/centos7 --repoid=updates --download-metadata
