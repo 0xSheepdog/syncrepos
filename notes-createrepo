@@ -51,3 +51,5 @@ createrepo -p \
 --baseurl=http://mirror.spde.local/centos7/updates \
 --update \
 /data/repos/centos7/updates
+
+# /bin/createrepo -p -o /data/repos/centos7/updates --baseurl=http://mirror.spde.local/centos7/updates --update /data/repos/centos7/updates
