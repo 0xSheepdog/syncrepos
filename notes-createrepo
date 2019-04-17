@@ -13,7 +13,7 @@ createrepo -p \
 
 
 ### Update existing repo-md for "base"
-/bin/createrepo -pq \
+/bin/createrepo -p \
 -g /data/repos/centos7/base/Packages/comps.xml \
 -o /data/repos/centos7/base \
 --baseurl=http://mirror.spde.local/centos7/base \
@@ -30,7 +30,7 @@ createrepo -p \
 /data/repos/centos7/extras
 
 ### Update existing repo-md for "extras"
-/bin/createrepo -pq \
+/bin/createrepo -p \
 -o /data/repos/centos7/extras \
 --baseurl=http://mirror.spde.local/centos7/base \
 --update \
