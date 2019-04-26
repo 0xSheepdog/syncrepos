@@ -28,3 +28,15 @@ createrepo -p -g /data/repos/centos7/base/Packages/comps.xml -o /data/repos/cent
 
 ### Update existing repo-md for "updates"
 /bin/createrepo -p -o /data/repos/centos7/updates --baseurl=http://mirror.spde.local/centos7/updates --update /data/repos/centos7/updates
+
+
+
+
+
+
+
+
+
+
+### RedHat
+/bin/createrepo -p -g /data/repos/redhat/rhel-7-server-rpms/comps.xml -o /data/repos/redhat/rhel-7-server-rpms --baseurl=http://mirror.spde.local/redhat/rhel-7-server-rpms /data/repos/redhat/rhel-7-server-rpms
