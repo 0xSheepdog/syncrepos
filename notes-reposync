@@ -1,12 +1,14 @@
-#!/bin/bash
-#
 # my reposync syntax for pulling the latest packages via 'reposync'
 
-## for base
-# reposync -gdlmnq -p /data/repos/centos7 --repoid=base --download-metadata
+## for base CentOS7
+# reposync -gdlmq -p /data/repos/centos7 --repoid=base --download-metadata
 
-# for extras
-# reposync -gdlmnq -p /data/repos/centos7 --repoid=extras --download-metadata
+# for extras CentOS7
+# reposync -gdlmq -p /data/repos/centos7 --repoid=extras --download-metadata
 
-# for updates
-# reposync -gdlmnq -p /data/repos/centos7 --repoid=updates --download-metadata
+# for updates CentOS7
+# reposync -gdlmq -p /data/repos/centos7 --repoid=updates --download-metadata
+
+
+# for RHEL7 server, optional, and extras -- MUST BE RUN ON core-repo1
+# reposync -gdmq --download-metadata -p /net/host11.spde.local/data/repos/redhat
