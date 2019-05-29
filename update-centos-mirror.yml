@@ -1,6 +1,0 @@
----
-- hosts:
-  - host11
-  become: true
-  tasks:
-  shell:
