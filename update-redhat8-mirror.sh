@@ -5,6 +5,10 @@
 # Synchronize packages for all enabled repos
 reposync -m -p /data/repos/redhat --download-metadata
 
+
+
+
+#### These are only necessary for making an HTTP repo (thus the baseurl= param)
 /bin/createrepo \
   --pretty      \
   --update      \
