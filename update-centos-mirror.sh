@@ -1,6 +1,6 @@
 #!/bin/#!/bin/sh
 # update existing repo (-d deletes packages removed from source repo, -n syncs newest packages only)
-reposync -gdlmq --download-metadata -p /data/repos/centos7
+reposync -gdlmnq --download-metadata -p /data/repos/centos7
 #reposync -gdlmq --download-metadata -p /data/repos/centos7 --repoid=updates
 #reposync -gdlmq --download-metadata -p /data/repos/centos7 --repoid=extras
 #reposync -gdlmq --download-metadata -p /data/repos/centos7 --repoid=base
