@@ -1,0 +1,42 @@
+---
+- name: Create/update repo-clone.service file
+  blockinfile:
+    state:  present
+    create: yes
+    path:   /etc/systemd/system/repo-clone.service
+    owner:  root
+    group:  root
+    mode:   0644
+    block: |
+      [Unit]
+      Description=Executes reposync for enabled dnf/yum4 repositories
+
+      [Service]
+      Type=oneshot
+      ExecStart=/usr/bin/reposync -m -p /data/repos/redhat --download-metadata
+
+- name: Create/update repo-clone.timer file
+  blockinfile:
+    state:  present
+    create: yes
+    path:   /etc/systemd/system/repo-clone.timer
+    owner:  root
+    group:  root
+    mode:   0644
+    block: |
+      [Unit]
+      Description=Run repo-clone.service 15min after boot and every 48 hours
+
+      [Timer]
+      OnBootSec=15min
+      OnUnitActiveSec=2d
+
+      [Install]
+      WantedBy=multi-user.target
+
+- name: Enable and start the repo-clone.timer unit
+  systemd:
+    name:     repo-clone.timer
+    enabled:  yes
+    state:    restarted
+    
