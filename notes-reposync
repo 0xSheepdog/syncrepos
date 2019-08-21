@@ -1,5 +1,4 @@
 # my reposync syntax for pulling the latest packages via 'reposync'
-
 ## for base CentOS7
 # reposync -gdlmq -p /data/repos/centos7 --repoid=base --download-metadata
 
@@ -10,5 +9,40 @@
 # reposync -gdlmq -p /data/repos/centos7 --repoid=updates --download-metadata
 
 
-# for RHEL7 server, optional, and extras -- MUST BE RUN ON core-repo1
-# reposync -gdmq --download-metadata -p /net/host11.spde.local/data/repos/redhat
+# for ALL repos enabled on the server
+# reposync -gdmq --download-metadata -p /path/to/repo-mirror
+
+
+# Abridged command line options
+-r REPOID, --repoid=REPOID
+       Specify repo ids to query, can be specified multiple times (default is all enabled).
+
+-e CACHEDIR, --cachedir CACHEDIR
+       Directory in which to store metadata.
+
+-d, --delete
+       Delete local packages no longer present in repository.
+
+-p DESTDIR, --download_path=DESTDIR
+       Path to download packages to: defaults to current directory.
+
+-g, --gpgcheck
+       Remove packages that fail GPG signature checking after downloading.  exit status is '1' if at least one package was removed.
+
+-u, --urls
+       Just list urls of what would be downloaded, don't download.
+
+-l, --plugins
+       Enable yum plugin support.
+
+-m, --downloadcomps
+       Also download comps.xml.
+
+--download-metadata
+       Download all the non-default metadata.
+
+-n, --newest-only
+       Download only newest packages per-repo.
+
+-q, --quiet
+       Output as little information as possible.
