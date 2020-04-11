@@ -3,31 +3,39 @@
 #
 # my createrepo syntax for updating local CentOS7 repo-mirrors
 
+
 ### Create new repo-md for "base" - notice the word "CREATE". if you already have a working repo, maybe try to "UPDATE" it (below)
 ## if not present already, manually copy /var/cache/yum/x86_64/7/base/<hash>-c7-x86_64-comps.xml.gz to /data/repos/centos7/base/Package/comps.xml
-createrepo -p -g /data/repos/centos7/base/Packages/comps.xml -o /data/repos/centos7/base --baseurl=http://mirror.spde.local/centos7/base /data/repos/centos7/base
-
+cd /mount/unity1/repos/centos7/base
+createrepo --workers=10 -g ./comps.xml -p .
 
 ### Update existing repo-md for "base"
-/bin/createrepo -p -g /data/repos/centos7/base/Packages/comps.xml -o /data/repos/centos7/base --baseurl=http://mirror.spde.local/centos7/base --update /data/repos/centos7/base
+cd /mount/unity1/repos/centos7/base
+createrepo --update --workers=10 -g ./comps.xml -p .
 
 
 
 
 ### Create new repo-md for "extras"
-/bin/createrepo -p -o /data/repos/centos7/extras --baseurl=http://mirror.spde.local/centos7/extras /data/repos/centos7/extras
+cd /mount/unity1/repos/centos7/extras
+createrepo --workers=10 -p .
 
 ### Update existing repo-md for "extras"
-/bin/createrepo -p -o /data/repos/centos7/extras --baseurl=http://mirror.spde.local/centos7/extras --update /data/repos/centos7/extras
+cd /mount/unity1/repos/centos7/extras
+createrepo --update --workers=10 -p .
 
 
 
 
 ### Create new repo-md for "updates"
-/bin/createrepo -p -o /data/repos/centos7/updates --baseurl=http://mirror.spde.local/centos7/updates /data/repos/centos7/updates
+cd /mount/unity1/repos/centos7/updates
+createrepo --workers=10 -p .
 
 ### Update existing repo-md for "updates"
-/bin/createrepo -p -o /data/repos/centos7/updates --baseurl=http://mirror.spde.local/centos7/updates --update /data/repos/centos7/updates
+cd /mount/unity1/repos/centos7/updates
+createrepo --update --workers=10 -p .
+
+
 
 
 

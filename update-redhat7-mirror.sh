@@ -1,6 +1,6 @@
 #!/bin/sh
 # update existing repo (-d deletes packages removed from source repo, -n syncs newest packages only)
-reposync -gdlm --download-metadata -p /net/host11.spde.local/data/repos/redhat
+reposync -gdlmn --download-metadata -p /mount/unity1/repos
 #reposync -gdlmnq --download-metadata -p /net/host11.spde.local/data/repos/redhat --repoid=rhel-7-server-rpms
 #reposync -gdlmnq --download-metadata -p /net/host11.spde.local/data/repos/redhat --repoid=rhel-7-server-optional-rpms
 #reposync -gdlmnq --download-metadata -p /net/host11.spde.local/data/repos/redhat --repoid=rhel-7-server-extras-rpms
